@@ -1,0 +1,30 @@
+# nixos-rebuild build / nix build output symlinks
+result
+result-*
+
+# Agent scratch state. These are machine-local: worktrees, session logs,
+# caches and locally-accepted permissions. Deliberately narrow, so that
+# intentional project config (.claude/settings.json, project skills and
+# commands, .codex/config.toml) can still be committed if ever wanted.
+.claude/worktrees/
+.claude/plans/
+.claude/sessions/
+.claude/projects/
+.claude/shell-snapshots/
+.claude/file-history/
+.claude/cache/
+.claude/paste-cache/
+.claude/todos/
+.claude/settings.local.json
+.claude/history.jsonl
+.codex/sessions/
+.codex/history.jsonl
+.copilot/history/
+.copilot/logs/
+.opencode/
+.aider*
+.crush/
+
+# Codex materialises its built-in system skills into ~/.codex/skills, which is
+# symlinked to ai/skills. Codex-managed, not ours to version.
+ai/skills/.system/
